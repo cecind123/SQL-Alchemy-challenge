@@ -79,7 +79,7 @@ def temp_monthly():
 def stats(start_date=None, end_date=None):
     """Return TMIN, TAVG, TMAX."""
     if not end_date:
-        end_date = start_date
+        end_date = start_date 
         
     results = session.query(func.min(Measurement.tobs), func.avg(Measurement.tobs), func.max(Measurement.tobs)).filter(Measurement.date>=start_date).filter(Measurement.date <= end_date).all()
     
